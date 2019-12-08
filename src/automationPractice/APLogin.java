@@ -11,7 +11,7 @@ public class APLogin {
 	public static void main(String[] args) {
 		// http://chromedriver.storage.googleapis.com/index.html
 		//String baseURL = "http://automationpractice.com/index.php";
-		System.setProperty("webdriver.chrome.driver", "D:\\Selenium\\libs\\chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver", "D:\\Selenium\\libs\\chromedriver.exe");
 		
 		WebDriver driver = new ChromeDriver();
 		
