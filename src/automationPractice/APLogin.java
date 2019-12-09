@@ -18,7 +18,7 @@ public class APLogin {
 		//driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.findElement(By.name("search_query")).sendKeys("Shirt");
 		//driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		//driver.quit();
+		driver.quit();
 		
 
 	}
