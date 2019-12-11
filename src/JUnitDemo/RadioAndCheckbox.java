@@ -44,12 +44,14 @@ public class RadioAndCheckbox {
 		Thread.sleep(2000);
 		driver.findElement(By.id("id_gender2")).click();
 		WebElement e1= driver.findElement(By.id("id_gender1"));
-		System.out.println("Is Radio button enabled? "+e1.isEnabled());
+		System.out.println("Is Radio button selected? "+e1.isSelected());
 		WebElement e2= driver.findElement(By.id("newsletter"));
 		e2.click();
-		System.out.println("Is Checkbox enabled? "+e1.isEnabled());
+		System.out.println("Is Checkbox enabled? "+e2.isEnabled());
 		e2.click();
 		System.out.println("Radio button enabled? "+e1.isEnabled());
+		
+		
 	}
 
 }
