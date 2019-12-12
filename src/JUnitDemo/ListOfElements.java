@@ -41,10 +41,18 @@ public class ListOfElements {
 		driver.findElement(By.id("email_create")).sendKeys("createmail1@demo.com");
 		driver.findElement(By.id("SubmitCreate")).click();
 		System.out.println("Create account page opened");
+		
+		Boolean Selected = true;
 		List<WebElement> radio = driver.findElements(By.xpath("//input[contains(@type,'radio') and contains (@name,'id_gender')]"));
 		int radSize = radio.size();
 		for(int i=0; i<radSize; i++) {
 			
+			Selected = radio.get(i).isSelected();
+			if(!Selected) {
+				radio.get(i).click();
+				
+			}
+			System.out.println("Radio selected");
 		}
 	}
 
