@@ -54,6 +54,17 @@ public class ListOfElements {
 			}
 			System.out.println("Radio selected");
 		}
+		List<WebElement> checkBoxes = driver.findElements(By.xpath("//input[contains(@type,'checkbox')]"));
+		int checkSize = checkBoxes.size();
+		for(int i=0; i<checkSize; i++) {
+			
+			Selected = checkBoxes.get(i).isSelected();
+			if(!Selected) {
+				checkBoxes.get(i).click();
+				
+			}
+			System.out.println("Checkbox selected");
+		}
 	}
 
 }
