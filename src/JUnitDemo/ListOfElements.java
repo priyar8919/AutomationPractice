@@ -12,6 +12,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class ListOfElements {
 	WebDriver driver;
@@ -28,10 +29,10 @@ public class ListOfElements {
 
 	@After
 	public void tearDown() throws Exception {
-		driver.quit();
+		//driver.quit();
 	}
 	@Test
-	public void test() {
+	public void test() throws InterruptedException {
 		
 		driver.get(baseURL);
 		//driver.findElement(By.className("login")).click();
@@ -43,6 +44,8 @@ public class ListOfElements {
 		System.out.println("Create account page opened");
 		
 		Boolean Selected = true;
+		
+		//Radio button actions
 		List<WebElement> radio = driver.findElements(By.xpath("//input[contains(@type,'radio') and contains (@name,'id_gender')]"));
 		int radSize = radio.size();
 		for(int i=0; i<radSize; i++) {
@@ -54,6 +57,8 @@ public class ListOfElements {
 			}
 			System.out.println("Radio selected");
 		}
+		
+		//Checkbox actions
 		List<WebElement> checkBoxes = driver.findElements(By.xpath("//input[contains(@type,'checkbox')]"));
 		int checkSize = checkBoxes.size();
 		for(int i=0; i<checkSize; i++) {
@@ -65,6 +70,30 @@ public class ListOfElements {
 			}
 			System.out.println("Checkbox selected");
 		}
+		
+		//Dropdown actions
+		
+		//ele= driver.findElement(By.id("days"));
+		WebElement ele1 = driver.findElement(By.xpath("//select[@id='days']"));
+		Select sel1 = new Select(ele1);
+		sel1.selectByIndex(15);
+		Thread.sleep(2000);
+		System.out.println("day selected");
+		
+		WebElement ele2= driver.findElement(By.xpath("//select[@id='months']"));
+		Select sel2 = new Select(ele2);
+		sel2.selectByVisibleText("December ");     // Exact value to be mentioned
+		Thread.sleep(2000);
+		System.out.println("month selected");
+		
+		WebElement ele3= driver.findElement(By.xpath("//select[@id='years']"));
+		Select sel3 = new Select(ele3);
+		sel3.selectByValue("1989");
+		Thread.sleep(2000);
+		System.out.println("year selected");
+		
+		
+		
 	}
 
 }
