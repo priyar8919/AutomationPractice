@@ -73,7 +73,6 @@ public class ListOfElements {
 		
 		//Dropdown actions
 		
-		//ele= driver.findElement(By.id("days"));
 		WebElement ele1 = driver.findElement(By.xpath("//select[@id='days']"));
 		Select sel1 = new Select(ele1);
 		sel1.selectByIndex(15);
@@ -91,6 +90,18 @@ public class ListOfElements {
 		sel3.selectByValue("1989");
 		Thread.sleep(2000);
 		System.out.println("year selected");
+		
+		//To get all options
+		
+		List <WebElement> monthsList = sel2.getOptions();
+		int mon = monthsList.size();
+		for(int i=0; i<mon; i++ ) {
+			System.out.println("Option at "+i + " is: "+ monthsList.get(i).getText());
+		}
+		
+		
+		
+		
 		
 		
 		
