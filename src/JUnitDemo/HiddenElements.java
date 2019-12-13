@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -27,7 +28,15 @@ public class HiddenElements {
 
 	@Test
 	public void test() {
-		//fail("Not yet implemented");
+		
+		//Before click no element
+		boolean presence = driver.findElement(By.className("please-wait")).isDisplayed();
+		System.out.println("Is hidden text displayed: "+ presence);
+		
+		//After click element is present
+		driver.findElement(By.id("newsletter-subscribe-button")).click();
+		presence = driver.findElement(By.className("please-wait")).isDisplayed();
+		System.out.println("Is hidden text displayed: "+ presence);
 	}
 
 }
