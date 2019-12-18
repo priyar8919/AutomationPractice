@@ -2,6 +2,7 @@ package usefulMethods;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
@@ -40,6 +41,15 @@ public class GenericExamples {
 			obj.getElement("passwd", "id").sendKeys("Test@123");
 			obj.getElement("SubmitLogin", "id").click();
 			System.out.println("The page name loaded is :"+driver.getTitle());
+			
+			List<WebElement> eleList = obj.getElements("//ul[@class='toggle-footer']", "xpath");
+						
+			for(int size = 0; size<=eleList.size()-1; size++) {
+				String element = eleList.get(size).getAttribute("Value");
+				System.out.println("Element at "+size+" is "+element);
+				
+				
+			}
 			
 		
 	}
