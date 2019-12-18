@@ -23,15 +23,15 @@ WebDriver driver;
 			return this.driver.findElement(By.xpath(locator));
 		}
 		else if (type.equals("css")) {
-			System.out.println("Element found with xpath: " + locator);
+			System.out.println("Element found with css: " + locator);
 			return this.driver.findElement(By.cssSelector(locator));
 		}
 		else if (type.equals("linktext")) {
-			System.out.println("Element found with xpath: " + locator);
+			System.out.println("Element found with linktext: " + locator);
 			return this.driver.findElement(By.linkText(locator));
 		}
 		else if (type.equals("partiallinktext")) {
-			System.out.println("Element found with xpath: " + locator);
+			System.out.println("Element found with partiallinktext: " + locator);
 			return this.driver.findElement(By.partialLinkText(locator));
 		}
 		else {
