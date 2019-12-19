@@ -42,15 +42,24 @@ public class GenericExamples {
 			obj.getElement("SubmitLogin", "id").click();
 			System.out.println("The page name loaded is :"+driver.getTitle());
 			
-			List<WebElement> eleList = obj.getElements("//ul[@class='toggle-footer']", "xpath");
-						
-			for(int size = 0; size<=eleList.size()-1; size++) {
-				String element = eleList.get(size).getAttribute("Value");
-				System.out.println("Element at "+size+" is "+element);
-				
-				
-			}
+			List<WebElement> eleList = obj.getElements("//ul[@class='bullet']", "xpath");
+			int listSize = eleList.size();
+			System.out.println("List size is "+listSize);
 			
+			System.out.println("Elements are "+ eleList.get(listSize-1).getText());
+			
+			
+			/*for(int size = 0; size<=listSize-1; size++) {
+				
+			System.out.println("Element at "+listSize+" is "+eleList.get(listSize).getText());
+
+				
+			}*/
+			
+			 for (WebElement webElement : eleList) {
+		            String name = webElement.getText();
+		            System.out.println(name);
+		        }
 		
 	}
 
