@@ -7,10 +7,18 @@ public class HomePage {
 
 	@FindBy(className="login")
 	WebElement signInLink;
+
+	@FindBy(id="search_query_top")
+	WebElement searchBox;
 	
 	public void clickSignin() {
-		
 		signInLink.click();
 	}
+	
+	public void sendSearchText(String searchText) {
+		searchBox.sendKeys(searchText);
+	}
+	
+	
 
 }
