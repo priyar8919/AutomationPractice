@@ -12,6 +12,7 @@ public class FloydsTriangle {
 		int RowNum = sc.nextInt();
 		
 		System.out.println("Floyd's Triangle is:");
+		System.out.println("****************************");
 		for (i=1; i<=RowNum; i++) {
 			for(j=1; j<=i; j++) {
 				
